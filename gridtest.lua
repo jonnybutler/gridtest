@@ -5,10 +5,10 @@ g = grid.connect()
 local cells = {}
 
 function init()
-  g.all(0)
+  g:all(0)
 end
 
-g.event = function(x,y,z)
+function g.key(x,y,z)
   if z == 1 then
     exists = false
     for i=1,#cells do
@@ -47,13 +47,13 @@ function remove_cell(cell_num)
 end
 
 function grid_redraw()
-  g.all(0)
+  g:all(0)
 
   for i=1,#cells do
-    g.led(cells[i].x, cells[i].y, 5)
+    g:led(cells[i].x, cells[i].y, 5)
   end
 
-  g.refresh()
+  g:refresh()
 end
 
 
