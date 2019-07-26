@@ -1,8 +1,7 @@
 -- Grid Test
 
-g = grid.connect()
-
 local cells = {}
+local g = grid.connect()
 
 function init()
   g:all(0)
